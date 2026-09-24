@@ -6,7 +6,7 @@ Namn: Balac
 Kurs: Introduktion till yrkesrollen och grunderna i IT-infrastruktur  
 Datum: 2026-09-22
 
-Den här dokumentationen beskriver min virtuella labbmiljö med Linux och Windows. Jag kommer att dokumentera nätverkskonfiguration, kommandoradsarbete, Git och min användning av AI.
+Den här dokumentationen beskriver min virtuella labbmiljö med två virtuella Linux-maskiner. Jag kommer att dokumentera nätverkskonfiguration, kommandoradsarbete, Git och min användning av AI.
 # Labbdokumentation
 
 ## Introduktion
@@ -34,7 +34,7 @@ Resultatet blev 4 skickade paket, 4 mottagna paket och 0 % packet loss. Det visa
 
 ## CLI-arbete
 
-Jag har arbetat med kommandoraden i Linux och Windows.
+Jag har arbetat med kommandoraden i Linux på mina virtuella maskiner.
 
 ### Linux
 
