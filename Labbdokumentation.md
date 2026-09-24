@@ -63,3 +63,18 @@ AI förklarade att `ip addr show` visar nätverkskort, IP-adresser, nätmask och
 Jag kontrollerade kommandot själv i Ubuntu Server. Kommandot fungerade och visade nätverkskortet `enp0s3`.
 
 Jag använde AI som stöd, men kontrollerade informationen själv i labbmiljön.
+
+## Git och versionshantering
+
+Jag använde Git för versionshantering av mitt projekt. Jag skapade ett lokalt Git-repository och gjorde flera commits under arbetets gång.
+
+Mitt GitHub-repository:
+https://github.com/balachmohammed/labbm-jli
+
+Jag använde bland annat följande Git-kommandon:
+
+- `git init` – skapade Git-repositoryt.
+- `git add` – lade till ändringar.
+- `git commit` – sparade olika versioner av arbetet.
+- `git status` – kontrollerade projektets status.
+- `git push` – skickade projektet till GitHub.
