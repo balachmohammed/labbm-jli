@@ -5,14 +5,13 @@
 Namn: Balac  
 Kurs: Introduktion till yrkesrollen och grunderna i IT-infrastruktur  
 Datum: 2026-09-22
-
-Den här dokumentationen beskriver min virtuella labbmiljö med Linux och Windows. Jag kommer att dokumentera nätverkskonfiguration, kommandoradsarbete, Git och min användning av AI.
+Den här dokumentationen beskriver min virtuella labbmiljö med två virtuella Linux-maskiner. Jag kommer att dokumentera nätverkskonfiguration, kommandoradsarbete, Git och min användning av AI.
 
 ## Labbmiljö
 
 Jag har skapat en virtuell labbmiljö i Oracle VirtualBox med två virtuella Linux-maskiner. Maskinerna är anslutna till samma interna nätverk som heter `LabNetwork`.
 | Maskin | Hostname | IP-adress | Nätmask | Nätverkskort |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Desktop (lubu) | puppypc4393 | 192.168.1.51 | /24 (255.255.255.0) | eth0 |
 | Server | Ubuntu-Server-Lab | 192.168.1.50 | /24 (255.255.255.0) | enp0s3 |
 
