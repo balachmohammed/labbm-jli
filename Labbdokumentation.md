@@ -110,3 +110,5 @@ Mitt GitHub-repository innehåller flera commits som visar hur dokumentationen h
 - `7252bb1` – Update Labbdokumentation.md
 - `af5b83f` – Dokumentera nätverk och Linux CLI
 - `f63119c` – Rätta labbdokumentationen
+
+Jag kontrollerade versionshistoriken i GitHub. Historiken motsvarar resultatet som visas med kommandot `git log --oneline`, där varje rad visar commit-ID och commit-meddelande.
