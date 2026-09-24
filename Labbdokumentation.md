@@ -19,12 +19,18 @@ Den här dokumentationen beskriver min virtuella labbmiljö med Linux och Window
 
 ## Labbmiljö
 
-Jag har skapat en virtuell labbmiljö med VirtualBox.
+Jag har skapat en virtuell labbmiljö i Oracle VirtualBox med två virtuella Linux-maskiner. Maskinerna är anslutna till samma interna nätverk som heter `LabNetwork`.
 
-- Desktop: Lubuntu
-- Server: Ubuntu Server
-- Nätverk: LabNetwork
-- Serverns nätverkskort: enp0s3
+| Maskin | Hostname | IP-adress | Nätmask | Nätverkskort |
+|---|---|---|---|---|
+| Desktop (lubu) | puppypc4393 | 192.168.1.51 | /24 (255.255.255.0) | eth0 |
+| Server | Ubuntu-Server-Lab | 192.168.1.50 | /24 (255.255.255.0) | enp0s3 |
+
+Jag testade kommunikationen från desktop till server med:
+
+`ping -c 4 192.168.1.50`
+
+Resultatet blev 4 skickade paket, 4 mottagna paket och 0 % packet loss. Det visar att maskinerna kan kommunicera med varandra på `LabNetwork`.
 
 ## CLI-arbete
 
@@ -32,37 +38,66 @@ Jag har arbetat med kommandoraden i Linux och Windows.
 
 ### Linux
 
-Exempel på kommandon:
+Jag använde Linux-terminalen för att skapa kataloger, filer, grupper och konfigurera rättigheter.
 
-- `pwd` – visar aktuell katalog.
-- `ls` – visar filer och kataloger.
-- `ip addr show` – visar nätverkskonfiguration.
-- `ping` – testar nätverksanslutning.
+Jag skapade katalogen:
 
-### Windows PowerShell
+`mkdir -p /var/systementor/konsultdata`
 
-Exempel på kommandon:
+Jag skapade filen:
 
-- `ipconfig /all` – visar nätverkskonfiguration.
-- `Get-Acl` – visar behörigheter.
-- `Test-Connection` – testar nätverksanslutning.
+`touch /var/systementor/konsultdata/anteckningar.txt`
+
+Jag skapade gruppen:
+
+`groupadd konsulter`
+
+Jag kopplade gruppen till katalogen och filen:
+
+`chgrp -R konsulter /var/systementor/konsultdata`
+
+Jag satte rättigheten 750 på katalogen:
+
+`chmod 750 /var/systementor/konsultdata`
+
+Jag satte rättigheten 640 på filen:
+
+`chmod 640 /var/systementor/konsultdata/anteckningar.txt`
+
+Jag kontrollerade resultatet med:
+
+`ls -la /var/systementor/konsultdata`
+
+Resultatet visade att katalogen hade rättigheten `drwxr-x---` (750) och att `anteckningar.txt` hade rättigheten `-rw-r-----` (640). Gruppen var `konsulter`.
+
+Jag använde även `ip addr show` för att kontrollera IP-adresser och `ping` för att testa kommunikationen mellan de virtuella maskinerna.
+
 ## AI-användning
 
 Jag använde generativ AI för att få hjälp med Linux-kommandon och nätverkskonfiguration.
 
 ### Prompt
 
-Jag bad AI att förklara hur man kontrollerar nätverkskonfiguration i Linux med kommandot `ip addr show`.
+Jag frågade AI:
+
+"Vad betyder Linux-rättigheterna 750 för en katalog och 640 för en fil?"
 
 ### AI:s svar
 
-AI förklarade att `ip addr show` visar nätverkskort, IP-adresser, nätmask och information om nätverksanslutningen.
+AI förklarade att:
+
+- 750 betyder att ägaren får läsa, skriva och köra. Gruppen får läsa och köra. Andra användare har inga rättigheter.
+- 640 betyder att ägaren får läsa och skriva. Gruppen får läsa. Andra användare har inga rättigheter.
 
 ### Min kontroll
 
-Jag kontrollerade kommandot själv i Ubuntu Server. Kommandot fungerade och visade nätverkskortet `enp0s3`.
+Jag kontrollerade AI:s svar själv i Linux-terminalen med kommandot:
 
-Jag använde AI som stöd, men kontrollerade informationen själv i labbmiljön.
+`ls -la /var/systementor/konsultdata`
+
+Resultatet visade att katalogen hade `drwxr-x---`, vilket motsvarar 750, och att filen `anteckningar.txt` hade `-rw-r-----`, vilket motsvarar 640.
+
+AI:s förklaring stämde alltså med resultatet i min labbmiljö. Jag är samtidigt medveten om att AI kan ge felaktiga eller gamla svar, därför kontrollerade jag informationen praktiskt innan jag använde den.
 
 ## Git och versionshantering
 
