@@ -113,3 +113,11 @@ Jag använde bland annat följande Git-kommandon:
 - `git commit` – sparade olika versioner av arbetet.
 - `git status` – kontrollerade projektets status.
 - `git push` – skickade projektet till GitHub.
+### Commit-historik
+
+Mitt GitHub-repository innehåller flera commits som visar hur dokumentationen har utvecklats:
+
+- `1871707` – Add files via upload
+- `7252bb1` – Update Labbdokumentation.md
+- `af5b83f` – Dokumentera nätverk och Linux CLI
+- `f63119c` – Rätta labbdokumentationen
